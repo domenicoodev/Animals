@@ -1,0 +1,4 @@
+package Animali;
+
+public class Gatto {
+}
