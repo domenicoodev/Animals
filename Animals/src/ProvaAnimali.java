@@ -41,7 +41,7 @@ public class ProvaAnimali {
         Infortunato Carolina = new Infortunato(new Gatto("Carolina",8,0),1);
         //CREO LA CHAIN OF RESPONSABILITY
         Handler handler = new VeterinarioGenerale();
-        handler.setNext(new VeterinarioSpecialista());
+        handler.setNext(new VeterinarioSpecialista()/*.setNext(QUALCOS'ALTRO)*/);
         handler.handle(Carolina);
     }
 }

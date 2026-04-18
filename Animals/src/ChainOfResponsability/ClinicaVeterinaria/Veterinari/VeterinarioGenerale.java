@@ -8,7 +8,7 @@ public class VeterinarioGenerale extends AbstractHandler {
     @Override
     public boolean handle(Infortunato animale){
         if(animale.getGravità() == 0){
-            System.out.println("Animale " + animale.getNome() + " gestito da Veterinario Generale.");
+            System.out.println(animale.getAnimale().getClass().getSimpleName() + " " + animale.getNome() + " gestito da Veterinario Generale.");
             return true;
         }
         else{return super.handle(animale);}

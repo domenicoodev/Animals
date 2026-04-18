@@ -17,6 +17,8 @@ public class Infortunato implements Animale {
     }
     public int getGravità(){return gravità;}
 
+    public Animale getAnimale(){return animale;}
+
     @Override
     public String getNome(){return animale.getNome();}
     @Override

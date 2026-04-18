@@ -8,7 +8,7 @@ public class VeterinarioSpecialista extends AbstractHandler {
     @Override
     public boolean handle(Infortunato animale){
         if(animale.getGravità() == 1){
-            System.out.println("Animale " + animale.getNome() + " gestito da Veterinario Specialista.");
+            System.out.println(animale.getAnimale().getClass().getSimpleName() + " " + animale.getNome() + " gestito da Veterinario Specialista.");
         return true;
         }
         else return super.handle(animale);
