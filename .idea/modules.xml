@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/AdapterPattern/AdapterPattern.iml" filepath="$PROJECT_DIR$/AdapterPattern/AdapterPattern.iml" />
-      <module fileurl="file://$PROJECT_DIR$/AdapterPatternAnimalsExample/AdapterPatternAnimalsExample.iml" filepath="$PROJECT_DIR$/AdapterPatternAnimalsExample/AdapterPatternAnimalsExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Animals/Animals.iml" filepath="$PROJECT_DIR$/Animals/Animals.iml" />
       <module fileurl="file://$PROJECT_DIR$/Domenico Greco.iml" filepath="$PROJECT_DIR$/Domenico Greco.iml" />
     </modules>
   </component>

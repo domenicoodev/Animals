@@ -3,6 +3,7 @@ import Adapter.CricetoObjectAdapter;
 import Animali.Animale;
 import Animali.Gatto;
 import Animali.Cane;
+import Decorator.DecoratoreCuori;
 
 public class ProvaAnimali {
     public static void main(String[] args) {
@@ -27,5 +28,10 @@ public class ProvaAnimali {
 
         System.out.println("[OBJECT ADAPTER] ---> Il criceto di nome " + mimiObject.getNome() +
                 " ha " + mimiObject.etàAnimale().getAnniSpecie() + " anni e "
-                + mimiObject.etàAnimale().getMesiSpecie() + " mesi" );    }
+                + mimiObject.etàAnimale().getMesiSpecie() + " mesi" );
+
+    Animale micioDecorato = new DecoratoreCuori(gatti[0]); // potrei benissimo sostituire gatti[0] con cani[0] o con MimiClass ecc..
+                                                            //non ho bisogno di creare sottoclassi per ognuno di essi.
+    System.out.println(micioDecorato.getNome());
+    }
 }
