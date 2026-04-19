@@ -8,6 +8,9 @@ import ChainOfResponsability.ClinicaVeterinaria.Infortunato;
 import ChainOfResponsability.ClinicaVeterinaria.Veterinari.VeterinarioGenerale;
 import ChainOfResponsability.ClinicaVeterinaria.Veterinari.VeterinarioSpecialista;
 import Decorator.DecoratoreCuori;
+import FactoryMethod.RifugioAnimali;
+import FactoryMethod.RifugioCani;
+import FactoryMethod.RifugioGatti;
 
 public class ProvaAnimali {
     public static void main(String[] args) {
@@ -43,5 +46,12 @@ public class ProvaAnimali {
         Handler handler = new VeterinarioGenerale();
         handler.setNext(new VeterinarioSpecialista()/*.setNext(QUALCOS'ALTRO)*/);
         handler.handle(Carolina);
+
+        //FACTORY METHOD
+        RifugioAnimali rifugioGatti = new RifugioGatti();
+        RifugioAnimali rifugioCani = new RifugioCani();
+
+        Animale macchia = rifugioGatti.registraAnimale("Macchia",8,0);
+        Animale fido = rifugioCani.registraAnimale("Fido",3,5,"piccola");
     }
 }
