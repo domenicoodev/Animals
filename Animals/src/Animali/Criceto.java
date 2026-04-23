@@ -1,4 +1,8 @@
 package Animali;
+/*
+ * Classe che andrò ad adattare all'interfaccia Animale
+ * sfruttando il design pattern Adapter.
+ */
 
 public class Criceto {
     private String nome;
@@ -27,7 +31,7 @@ public class Criceto {
         int anniRis = 0;
         int mesiRis = 0;
 
-        // Trasformiamo tutto in mesi totali del criceto per facilitare il calcolo
+        // Vado a trasformare tutto in mesi totali del criceto per facilitare il calcolo.
         int mesiTotaliCriceto = (anniUmani * 12) + mesiUmani;
 
         if (mesiTotaliCriceto <= 1) {
@@ -41,7 +45,7 @@ public class Criceto {
 
         // In questo caso mesiRis rimarrà quasi sempre 0 perché il calcolo 
         // del criceto è talmente veloce che si conta direttamente in anni umani.
-        // Ma per coerenza con la classe Età, lo gestiamo così.
+        // Ma per coerenza con la classe Età, lo gestisco così.
 
         return new int[]{anniRis, mesiRis};
     }
