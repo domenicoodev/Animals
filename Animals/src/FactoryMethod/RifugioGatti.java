@@ -1,18 +1,11 @@
 package FactoryMethod;
-
 import Animali.Animale;
-import Animali.Cane;
-import Animali.Gatto;
 
-public class RifugioGatti extends RifugioAnimali {
+public abstract class RifugioGatti {
+    protected abstract Animale creaAnimale(String nome, int anniUmani, int mesiUmani);
 
-    @Override
-    protected Animale creaAnimale(String nome, int anniUmani, int mesiUmani) {
-        return new Gatto(nome, anniUmani, mesiUmani);
-    }
-
-    @Override
-    protected Animale creaAnimale(String nome, int anniUmani, int mesiUmani, String taglia) {
-        throw new IllegalArgumentException("I gatti non hanno la taglia!");
+    public Animale registraAnimale(String nome, int anniUmani, int mesiUmani){
+        Animale a = creaAnimale(nome, anniUmani, mesiUmani);
+        return a;
     }
 }

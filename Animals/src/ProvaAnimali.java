@@ -8,9 +8,10 @@ import ChainOfResponsability.ClinicaVeterinaria.Infortunato;
 import ChainOfResponsability.ClinicaVeterinaria.Veterinari.VeterinarioGenerale;
 import ChainOfResponsability.ClinicaVeterinaria.Veterinari.VeterinarioSpecialista;
 import Decorator.DecoratoreCuori;
-import FactoryMethod.RifugioAnimali;
 import FactoryMethod.RifugioCani;
+import FactoryMethod.RifugioCaniPiccoli;
 import FactoryMethod.RifugioGatti;
+import FactoryMethod.RifugioGattiAnziani;
 
 public class ProvaAnimali {
     public static void main(String[] args) {
@@ -48,10 +49,17 @@ public class ProvaAnimali {
         handler.handle(Carolina);
 
         //FACTORY METHOD
-        RifugioAnimali rifugioGatti = new RifugioGatti();
-        RifugioAnimali rifugioCani = new RifugioCani();
+        /*
+         per strutturare bene il factory method le fabbriche devono produrre oggetti
+        * della stessa famiglia per cui separiamo le fabbriche che andranno
+        * a produrre animali specifici.
+        * */
+        RifugioCani rifugioCani = new RifugioCaniPiccoli();
+        RifugioGatti rifugioGatti = new RifugioGattiAnziani();
 
         Animale macchia = rifugioGatti.registraAnimale("Macchia",8,0);
-        Animale fido = rifugioCani.registraAnimale("Fido",3,5,"piccola");
+        Animale roy = rifugioCani.registraAnimale("Roy",3,5);
+        System.out.println("L'animale " + macchia.getNome() + " appartiene a " + rifugioGatti.getClass().getSimpleName());
+        System.out.println("L'animale " + roy.getNome() + " appartiene a " + rifugioCani.getClass().getSimpleName());
     }
 }

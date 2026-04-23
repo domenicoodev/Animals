@@ -1,19 +1,21 @@
 package FactoryMethod;
-
 import Animali.Animale;
-import Animali.Cane;
 
-public class RifugioCani extends RifugioAnimali{
+public abstract class RifugioCani {
+    //VERSIONE CANI CON STRING TAGLIA
+    protected abstract Animale creaAnimale(String nome, int anniUmani, int mesiUmani);
 
-    @Override
-    protected Animale creaAnimale(String nome, int anniUmani, int mesiUmani, String taglia)
-    {
-        return new Cane(nome,anniUmani,mesiUmani,taglia);
+    public Animale registraAnimale(String nome, int anniUmani, int mesiUmani){
+        Animale a = creaAnimale(nome, anniUmani, mesiUmani);
+        return a;
     }
 
-    @Override
-    protected Animale creaAnimale(String nome, int anniUmani,int mesiUmani)
-    {
-        throw new IllegalArgumentException("Inserire anche la taglia!");
+   /* //VERSIONE ALTRI ANIMALI
+    protected abstract Animale creaAnimale(String nome, int anniUmani, int mesiUmani);
+
+    public Animale registraAnimale(String nome, int anniUmani, int mesiUmani){
+        Animale a = creaAnimale(nome, anniUmani, mesiUmani);
+        return a;
     }
+    */
 }
