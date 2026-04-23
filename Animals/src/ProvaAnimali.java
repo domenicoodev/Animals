@@ -51,7 +51,7 @@ public class ProvaAnimali {
         //FACTORY METHOD
         /*
          per strutturare bene il factory method le fabbriche devono produrre oggetti
-        * della stessa famiglia per cui separiamo le fabbriche che andranno
+        * della stessa famiglia per cui separo le fabbriche che andranno
         * a produrre animali specifici.
         * */
         RifugioCani rifugioCani = new RifugioCaniPiccoli();
