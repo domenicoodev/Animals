@@ -39,9 +39,9 @@ public class ProvaAnimali {
                 " ha " + mimiObject.etàAnimale().getAnniSpecie() + " anni e "
                 + mimiObject.etàAnimale().getMesiSpecie() + " mesi" );
         //DECORATOR
-    Animale micioDecorato = new DecoratoreCuori(gatti[0]); // potrei benissimo sostituire gatti[0] con cani[0] o con MimiClass ecc..
+        Animale micioDecorato = new DecoratoreCuori(gatti[0]); // potrei benissimo sostituire gatti[0] con cani[0] o con MimiClass ecc..
                                                             //non ho bisogno di creare sottoclassi per ognuno di essi.
-    System.out.println(micioDecorato.getNome());
+        System.out.println(micioDecorato.getNome());
         Infortunato Carolina = new Infortunato(new Gatto("Carolina",8,0),1);
         //CREO LA CHAIN OF RESPONSABILITY
         Handler handler = new VeterinarioGenerale();
@@ -50,7 +50,7 @@ public class ProvaAnimali {
 
         //FACTORY METHOD
         /*
-         per strutturare bene il factory method le fabbriche devono produrre oggetti
+        * per strutturare bene il factory method le fabbriche devono produrre oggetti
         * della stessa famiglia per cui separo le fabbriche che andranno
         * a produrre animali specifici.
         * */
