@@ -1,4 +1,5 @@
 import AbstractFactory.CatsFactory;
+import AbstractFactory.DogsFactory;
 import Adapter.CricetoClassAdapter;
 import Adapter.CricetoObjectAdapter;
 import Animali.Animale;
@@ -57,11 +58,16 @@ public class ProvaAnimali {
 
         //ABSTRACT FACTORY
         CatsFactory fattoriaGatti = new CatsFactory();
+        DogsFactory fattoriaCani = new DogsFactory();
+
         RifugioAnimali gattiPiccoli = fattoriaGatti.animaliPiccoli();
+        RifugioAnimali caniGrandi = fattoriaCani.animaliGrandi();
+
         Animale rhea = gattiPiccoli.registraAnimale("Rhea",1,2);
         System.out.println("L'animale " + rhea.getNome() + " ha " +
                 rhea.etàAnimale().getAnniSpecie() + " anni e " + rhea.etàAnimale().getMesiSpecie() + " mesi");
-
+        Animale birillo = caniGrandi.registraAnimale("Birillo", 10,5);
+        System.out.println("Il cane " + birillo.getNome() + " appartiene a " + caniGrandi.getClass().getSimpleName());
 
         Animale macchia = rifugioGatti.registraAnimale("Macchia",8,0);
         Animale roy = rifugioCani.registraAnimale("Roy",3,5);

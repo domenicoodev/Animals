@@ -6,4 +6,5 @@ import FactoryMethod.RifugioGatti;
 
 public interface AnimalsFactory {
     RifugioAnimali animaliPiccoli();
+    RifugioAnimali animaliGrandi();
 }
