@@ -1,3 +1,4 @@
+import AbstractFactory.CatsFactory;
 import Adapter.CricetoClassAdapter;
 import Adapter.CricetoObjectAdapter;
 import Animali.Animale;
@@ -8,10 +9,7 @@ import ChainOfResponsability.ClinicaVeterinaria.Infortunato;
 import ChainOfResponsability.ClinicaVeterinaria.Veterinari.VeterinarioGenerale;
 import ChainOfResponsability.ClinicaVeterinaria.Veterinari.VeterinarioSpecialista;
 import Decorator.DecoratoreCuori;
-import FactoryMethod.RifugioCani;
-import FactoryMethod.RifugioCaniPiccoli;
-import FactoryMethod.RifugioGatti;
-import FactoryMethod.RifugioGattiAnziani;
+import FactoryMethod.*;
 
 public class ProvaAnimali {
     public static void main(String[] args) {
@@ -56,6 +54,14 @@ public class ProvaAnimali {
         * */
         RifugioCani rifugioCani = new RifugioCaniPiccoli();
         RifugioGatti rifugioGatti = new RifugioGattiAnziani();
+
+        //ABSTRACT FACTORY
+        CatsFactory fattoriaGatti = new CatsFactory();
+        RifugioAnimali gattiPiccoli = fattoriaGatti.animaliPiccoli();
+        Animale rhea = gattiPiccoli.registraAnimale("Rhea",1,2);
+        System.out.println("L'animale " + rhea.getNome() + " ha " +
+                rhea.etàAnimale().getAnniSpecie() + " anni e " + rhea.etàAnimale().getMesiSpecie() + " mesi");
+
 
         Animale macchia = rifugioGatti.registraAnimale("Macchia",8,0);
         Animale roy = rifugioCani.registraAnimale("Roy",3,5);
