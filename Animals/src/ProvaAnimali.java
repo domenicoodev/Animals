@@ -11,9 +11,21 @@ import ChainOfResponsability.ClinicaVeterinaria.Veterinari.VeterinarioGenerale;
 import ChainOfResponsability.ClinicaVeterinaria.Veterinari.VeterinarioSpecialista;
 import Decorator.DecoratoreCuori;
 import FactoryMethod.*;
+import Prototype.AnimalsPrototypeFactory;
+
+import javax.swing.*;
 
 public class ProvaAnimali {
     public static void main(String[] args) {
+        /* GUI IN LAVORAZIONE
+        var frame1 = new JFrame();
+        var button1 = new JButton("Animali");
+        frame1.setTitle("Animali");
+        frame1.add(button1);
+        frame1.setSize(400,400);
+        frame1.setVisible(true);
+        */
+
         Animale[] gatti = new Gatto[3];
         Animale[] cani = new Cane[3];
         //ADAPTER PER CRICETO
@@ -73,5 +85,11 @@ public class ProvaAnimali {
         Animale roy = rifugioCani.registraAnimale("Roy",3,5);
         System.out.println("L'animale " + macchia.getNome() + " appartiene a " + rifugioGatti.getClass().getSimpleName());
         System.out.println("L'animale " + roy.getNome() + " appartiene a " + rifugioCani.getClass().getSimpleName());
+
+
+        //PROTOTYPE: CREO UN OGGETTO ANIMALE IN BASE AL PROTOTIPO REGISTRATO NELLA FACTORY TRAMITE CLONAZIONE
+        Animale fufi = AnimalsPrototypeFactory.createAnimale();
+        System.out.println("L'animale " + fufi.getNome() + " ha " + fufi.etàAnimale().getAnniSpecie() + " anni e "
+                            + fufi.etàAnimale().getMesiSpecie() + " mesi");
     }
 }

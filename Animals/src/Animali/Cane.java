@@ -1,13 +1,14 @@
 package Animali;
 
-public class Cane implements Animale {
+public class Cane extends AnimaleAstratto {
     private String nome;
     private int anniUmani;
     private int mesiUmani;
     private String taglia;
 
     public Cane(String nome, int anniUmani, int mesiUmani, String taglia) {
-        if (nome == null || nome.isEmpty() || anniUmani < 0 || anniUmani > 40
+        super(nome);
+        if (anniUmani < 0 || anniUmani > 40
                 || anniUmani == 0 && mesiUmani == 0 || mesiUmani < 0 || mesiUmani > 12
                 || taglia == null || taglia.isEmpty() ||
                 !taglia.equals("piccola") && !taglia.equals("media") && !taglia.equals("grande")) {

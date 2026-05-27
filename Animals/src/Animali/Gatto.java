@@ -1,15 +1,13 @@
 package Animali;
 
-public class Gatto implements Animale {
+public class Gatto extends AnimaleAstratto {
 
     private String nome;
     private int anniUmani;
     private int mesiUmani;
 
     public Gatto(String nome, int anniUmani, int mesiUmani) {
-        if (nome == null || nome.isEmpty()) {
-            throw new IllegalArgumentException("Inserisci un nome valido per il gatto!");
-        }
+        super(nome);
         if (anniUmani < 0 || anniUmani > 25 || mesiUmani < 0 || mesiUmani > 11
                 || (anniUmani == 0 && mesiUmani == 0)) {
             throw new IllegalArgumentException("Inserisci un'età valida per il gatto!");
@@ -48,5 +46,12 @@ public class Gatto implements Animale {
         mesiRis = mesiRis % 12;
 
         return new Età(anniRis, mesiRis);
+    }
+
+    @Override
+    public Gatto clone() {
+        Gatto g = (Gatto) super.clone();
+        g.nome = new String(nome); //IMPORTANTE PER NON CREARE ALIASING
+        return g;
     }
 }
